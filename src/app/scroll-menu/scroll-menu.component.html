@@ -1,0 +1,51 @@
+<p>scroll-menu works!</p>
+<div class="container">
+
+    <div id="stepper1" class="bs-stepper">
+      <div class="bs-stepper-header">
+        <div class="step" data-target="#test-l-1">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">1</span>
+            <span class="bs-stepper-label">Global {{settings}}</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#test-l-2">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">2</span>
+            <span class="bs-stepper-label">Password</span>
+          </button>
+        </div>
+        <div class="line"></div>
+        <div class="step" data-target="#test-l-3">
+          <button class="step-trigger">
+            <span class="bs-stepper-circle">3</span>
+            <span class="bs-stepper-label">Validate</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="bs-stepper-content">
+        <form (ngSubmit)="onSubmit()">
+
+          <div id="test-l-1" class="content">
+
+            <app-global-settings></app-global-settings>
+            
+            <button type='button' (click)="next()" class="btn btn-primary">Next</button>
+          </div>
+
+          <div id="test-l-2" class="content">
+           <app-map></app-map>
+
+            <button (click)="next()" class="btn btn-primary">Next</button>
+          </div>
+
+          <div id="test-l-3" class="content text-center">
+            <button type="submit" class="btn btn-primary mt-5">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>

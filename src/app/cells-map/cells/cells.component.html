@@ -1,0 +1,36 @@
+<ng-template #cellIsActive>
+  <div class=" d-flex align-items-center  ">
+    <select class="form-select" aria-label="Default select example" (click)="selectChangeHandler($event)">
+      <option selected>Choose à vegetable</option>
+      <option *ngFor="let plant of filterByEnemiesSelectOption()" value="{{plant.name}}"
+        [ngStyle]="{'background-color': determinateFriendsOfAdjacentCells().includes(plant.name) ?'LawnGreen' : 'white' }">
+        {{plant.name}}</option>
+    </select>
+  </div>
+</ng-template>
+
+<ng-template #popContent>Hello, {{indexCell }} {{indexHeight}} {{indexWidth}} {{content }} !
+  <div class=" row ">
+    <input class=" form-check-input me-1 " type=" checkbox" (click)="filterByEnemiesSelectOption()"> test
+
+    <input class=" form-check-input me-1 " type=" checkbox" (click)="clearContentCell()"> Clear content
+    <input class="form-check-input me-1 " type="checkbox" (click)="disableCell()" [checked]='this.cellIsDisable'>
+    Disable cell
+    <div *ngIf="this.cellIsDisable; else cellIsActive" class="alert alert-danger" role="alert">
+      Enable cell to select plant
+    </div>
+
+  </div>
+</ng-template>
+
+
+<div class=" blob   d-flex justify-content-center align-items-center "
+  [ngStyle]="{'background-color': this.cellIsDisable ?'rgba(100, 100, 100, 0.5)' : null }"
+  id="ID{{indexCell }}{{indexHeight}}{{indexWidth}}" style=" width: 100%; height: 100%; " ngbTooltip="{{content}}"
+  popoverTitle="Informations" [autoClose]="'outside'" [ngbPopover]="popContent">
+
+  <img class="blob" *ngIf='this.content !== "content initial" && this.cellIsDisable === false'
+    style=" width: 100%; height: 100%; " [src]="getPlantIcon()" alt="">
+
+
+</div>

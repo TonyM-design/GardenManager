@@ -1,0 +1,14 @@
+<li class="list-group-item">
+    <input class="form-check-input me-1 " type="checkbox" (click)="showItemList()" >
+    Vegetables
+    <input class="form-check-input me-1 " type="checkbox" (click)="dispatchPlantButton()" >
+    DISPATCH PLANT TEST   
+     <input class="form-check-input me-1 " type="checkbox" (click)="testEtat()" >
+
+    <!-- second level of VEGETABLE-->
+
+    <ul class="list-group" *ngIf="showListChecked === true">
+        <app-item-select-plants *ngFor="let plantList of plantLists; let i = index" [plantName]="plantList.name" [plantIsSelected]="plantList.isSelected" [index]="i" [quantity] = "plantList.quantity"  ></app-item-select-plants>
+    </ul>
+</li>
+

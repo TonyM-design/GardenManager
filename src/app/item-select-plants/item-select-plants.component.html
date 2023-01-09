@@ -1,0 +1,16 @@
+<div class="row">
+
+  <li class="list-group-item d-flex  " [ngStyle]="{ backgroundColor: getNewColor()}">
+    <div class=" d-flex align-items-center  ">
+      <input class="form-check-input me-1 " type="checkbox" value="" aria-label="..."
+        (click)="this.itemSelectService.showNumberInput(index)">
+      <b class="  " style="margin-left: 1ch">{{plantName}} || selectionné : {{plantIsSelected}} index : {{index}} quantité : {{quantity}}</b>
+    </div>
+
+    <div style="margin-left: 2ch;" class="col-2 d-flex align-items-center "
+      *ngIf="this.itemSelectService.plantLists[index].isSelected === true">
+      Nombre 
+      <input  style="margin-left: 1ch;" type="number" min='0' class="form-control col-2 " placeholder="ex: 0" aria-label="garden's width" aria-describedby="basic-addon1" [ngModel]="quantity" (ngModelChange)="this.itemSelectService.modifyItemQuantity(index, $event)">
+    </div>
+  </li>
+</div>

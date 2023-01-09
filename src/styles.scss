@@ -1,1 +1,160 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import '~bs-stepper/dist/css/bs-stepper.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+// concerning html part
+.home {
+  background-color: cadetblue;
+}
+.homeLeft {
+
+  background-color: #833ab4;
+
+}
+
+.homeRight{
+  width: 70%;
+
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+}
+
+.homeNav {
+height: max-content;
+width: max-content;
+  border: none !important;
+  margin: 2.5%;
+}
+.homeBoxImgContainer{
+   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+
+
+.homeBoxImg{
+
+background-color: yellow;
+height: 100vh;
+width: 100vh;
+cursor: pointer;
+position: relative;
+transition: clip-path 300ms ease-in, width 300ms;
+overflow: hidden;
+z-index: 0;
+clip-path: inset(21% 41% 21% 41%);
+}
+.homeBoxImg:hover{
+background-color: blue;
+cursor: pointer;
+
+clip-path: inset(0px 0% 0px 0%);
+
+
+
+}
+
+
+@keyframes myAnim {
+  0% {
+    transform: scale(1);
+  }
+  
+  100% {
+    transform: scale(5);
+  }
+}
+// part concerning the map generator
+.parcels {
+    box-sizing: border-box;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    width: 150px;
+    height: 150px;
+    float: left;
+    background-color: burlywood;
+}
+
+.cells{
+    background-image: url(assets/img/Ground.svg) !important;
+    box-sizing: border-box;
+    font-size: 0;
+    width: 50%;
+    height: 50%;
+    float: left;
+    cursor: pointer;     
+    border: solid 2.5px transparent;
+
+}
+.cells:hover {  
+ 
+    border: 0.01px rgba(255, 255, 255, 0.516) dotted ;
+    box-sizing: border-box;
+    font-size: 0;
+    width: 50%;
+    height: 50%;
+    float: left;
+        border: solid 2.5px transparent;
+
+}
+
+.disableCell{
+    background-color: rgb(100, 100, 100, 0.5);
+}
+
+.blob:hover {
+
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+      filter: drop-shadow(2px 4px 8px #585858);
+  border-radius: 10px;
+	transform: scale(1);
+	animation: pulse-black 2s infinite;
+}
+
+@keyframes pulse-black {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 255, 30, 0.9);
+         border-radius: 10px;
+	}
+	
+	70% {
+		transform: scale(1.05);
+		box-shadow: 0 0 0 8px rgba(0, 255, 60, 0);
+	}
+	
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 255, 17, 0);
+	}
+}
+
+.gradient-border {
+  border: solid 2.5px transparent;
+  border-radius: 10px;
+  background-image: linear-gradient(white, white), 
+    linear-gradient(315deg,#833ab4,#fd1d1d 50%,#fcb045);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+
+}
+
+.rangeetablejeu{
+    box-sizing: border-box;
+    width: 100%;
+   // 
+  
+  }
+
+ 
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

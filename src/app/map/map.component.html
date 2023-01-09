@@ -1,0 +1,18 @@
+<p> MAP WORK</p>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+  <div class="list-group">
+    <div *ngFor="let columns of arrayCells ; let i = index" class="rangeetablejeu" id="{{'height'+i}}">
+      <div *ngFor="let rows of arrayCells[i]; let j = index" class=" parcels" id="{{'width'+j}}">
+        <app-cells id="date.now()" class="cells  d-flex " *ngFor="let cell of arrayCells[i][j];let k = index"
+          id="{{'indexCell'+i+j+k}}" [indexHeight]="arrayCells[i][j][k].indexHeight"
+          [indexWidth]="arrayCells[i][j][k].indexWidth" [indexCell]="arrayCells[i][j][k].indexCell"
+          [content]="arrayCells[i][j][k].content" [cellIsDisable]="arrayCells[i][j][k].cellIsDisable">
+        </app-cells>
+
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
